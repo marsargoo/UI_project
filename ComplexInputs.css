@@ -1,0 +1,18 @@
+.boxBorder4 {
+	display: flex;
+    flex-direction: column;
+	border: 2px solid black;
+	border-radius: 10px;
+  	box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+  	width: 200px;
+	height: 200px;
+	padding: 3rem;
+	place-items: center;
+	align-items: center;
+    margin: auto;
+}
+
+.tempControl {
+    display: inline-block;    
+    margin-top: 20px;
+}

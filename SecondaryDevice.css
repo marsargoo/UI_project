@@ -1,0 +1,39 @@
+
+.boxBorder3 {
+	display: flex;
+    flex-direction: row;
+	border: 2px solid black;
+  	box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+  	width: 200px;
+    height: 200px;
+	padding: 3rem;
+    margin: auto;
+}
+
+.boxBorder3 a:hover{
+    opacity: 2;
+    color: rgba(255, 255, 255, 1);
+}
+
+.boxBorder3 a {
+	list-style: none;
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration: none;
+}
+
+.smallBox {
+    display: flex;
+    position: relative;
+    top: 96%;
+    right: 139.5%;
+	border: 2px solid black;
+	border-radius: 0px;
+  	box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+    height: 20px;
+	padding: 16.7px;
+	
+}
+.smallBox label:hover{
+    cursor: pointer;
+    color: rgb(6, 168, 249);
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My UI</title>
+    
+    <!-- The following line references an external css file -->
+    <!-- It defines style rules for your page, and elements in your page -->
+    <link href="Project1.css" rel="stylesheet">
+    <link href="Gauge.css" rel="stylesheet">
+    <link href="ComplexInputs.css" rel="stylesheet">
+    <link href="SecondaryDevice.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="layout">
+        <nav class='appnavbar'>
+            <ul class='app__navbar-links'>  
+              <li class='p__opensans'><a href="#Temperature">Temperature</a></li>
+              <li class='p__opensans'><a href='#WaterGauge'>Water-Gauge</a></li>
+              <li class='p__opensans'><a href='#ComplexInputs'>Complex Inputs</a></li>
+              <li class='p__opensans'><a href='#SecondaryDevice'>Secondary-Device</a></li>
+            </ul>
+        </nav>
+        <div class="topheader" id="Home">
+            <div class="header">
+                <label> Smart Water Bottle </label>
+            </div>
+            <div class="bottle_images" id="Temperature">
+                <img src= "C:\Users\Mario\OneDrive\Documents\HomeWork_2022\basic-template\basic-template\Fridge.jpg" alt="fridge" />
+            </div>
+        </div>
+        <div class="topheader">
+            <label style="margin-top: 20px">Temperature Interface</label>
+            <span style="font-size: 12px; margin-bottom: 20px;">[Front-UI]</span>
+        </div>
+        <div class="temp-interface">
+            <div class="boxBorder1">
+                <div class="temp-text">
+                    <label "> Select the Temperature!</label>
+                </div>
+                <div class="button1">
+                    <button type="button" onclick="minus()">-</butston>
+                </div>
+
+                <div class="button2">
+                    <button type="button" onclick="adds()">+</button>
+                </div>
+
+                <div class="temp">
+                    <p>Temp: <a id="add">70</a></p>
+                </div>
+            </div>
+            <div class="boxBorder2">
+                <div class="gauge">
+                    <div class="gauge__body">
+                      <div class="gauge__fill"></div>
+                      <div class="gauge__cover"></div>
+                    </div>
+                </div>
+                <div class="temp-text app__navbar-links">
+                    <label><a onclick="changeMeter()">Click to Change!</a></label>
+                </div>
+            </div>
+        </div>
+        <div class="topheader">
+            <label style="margin-top: 30px">Water-Gauge Interface</label>
+            <span style="font-size: 12px; margin-bottom: 30px;">[Front-UI, Bottom]</span>
+        </div>
+        <div class="temp-interface">
+            <div class="boxBorder1a">
+                <div class="colors">
+                    <div class="divider" style="background-color: rgb(249, 6, 6);">
+                    </div>
+                    <div class="divider" style="background-color: rgb(242, 255, 1); margin-left: 20px; margin-right: 20px;">
+                    </div>
+                    <div class="divider" style="background-color: rgb(7, 253, 40);">
+                    </div>
+                </div>
+            </div>
+            <div class="boxBorder2" >
+                <div class="gauge1" id="WaterGauge">
+                    <div class="gauge__body1">
+                      <div class="gauge__fill1"></div>
+                      <div class="gauge__cover1"></div>
+                    </div>
+                </div>
+                <div class="gauge-text app__navbar-links">
+                    <label><a onclick="changeMeter1()">Click to Change!</a></label>
+                </div>
+            </div>
+        </div>
+        <div class="text-description">
+            <span> The red, yellow, and green colors correspond to</span>
+            <span>the amount of water thats remaining in the bottle </span>
+        </div>
+        <div class="topheader ">
+            <label style="margin-top: 30px">Secondary Device</label>
+            <span style="font-size: 12px; margin-bottom: 30px;">[External-Display]</span>
+        </div>
+        <div >
+            <div class="boxBorder3" id="SecondaryDevice" >
+                <div>
+                    <canvas id="myChart" style=" max-width:300px; margin-left: -10px; margin-top: 60px;"></canvas>
+                </div>
+                <div class="smallBox">
+                    <label><a href='#Home'>Home</a></label>
+                </div>
+                <div class="smallBox">
+                    <label><a href="#Temperature">Temp</a></label>
+                </div>
+                <div class="smallBox">
+                    <label><a href="#WaterGauge">Gauge</a></label>
+                </div>
+                <div class="smallBox">
+                    <label><a href="#Home">Stats</a></label>
+                </div>
+            </div>
+        </div>
+        <div class="topheader ">
+            <label style="margin-top: 30px">Complex Inputs (Temp)</label>
+            <span style="font-size: 12px; margin-bottom: 30px;">[External-Display]</span>
+        </div>
+        <div class="temp-interface" id="ComplexInputs">
+            <div class="boxBorder4">
+                <div class="gauge2" style="margin-right: 20px">
+                    <div class="gauge__body2">
+                      <div class="gauge__fill2"></div>
+                      <div class="gauge__cover2"></div>
+                    </div>
+                </div>
+                <div class="tempControl">
+                    <div class="button1">
+                        <button type="button" onclick="changeMeterNeg()">-</butston>
+                    </div>
+                    <div class="button2">
+                        <button type="button" onclick="changeMeterPlus()">+</button>
+                    </div>
+                    <div class="temp-text app__navbar-links">
+                        <p>Selected Mode: <a id="mode"></a></p>
+                    </div>
+                    <div class="button1">
+                        <button type="button" onclick="cool()">Cool</butston>
+                    </div>
+
+                    <div class="button2">
+                        <button type="button" onclick="hot()">Hot</button>
+                    </div>
+                    <div class="button3">
+                        <button type="button" onclick="off()">Off</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+        
+    <script>
+        var myChart = new Chart("myChart", {
+            type: "line",
+            data: {},
+            options: {}
+        });
+
+        var xValues = [12,1,2,3,4,5,6,7,8,9,10,11];
+        var yValues = [950,860,800,750,690,510,450,300,210,120,70,0];
+
+        new Chart("myChart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: "rgba(0,0,0,1.0)",
+            borderColor: "rgba(0,0,0,0.1)",
+            data: yValues
+            }]
+        },
+        options:{ 
+            legend: {display: false},
+            scales: {
+            yAxes: [{ticks: {min: 0, max: 950}}],
+            }
+        }
+        });
+    </script>
+
+    <script>
+        var add = 70;
+        function adds() {
+            add += 1;
+            document.getElementById("add").innerHTML = add;
+        };
+        function minus() {
+            add -= 1;
+            document.getElementById("add").innerHTML = add;
+        };
+    
+        const gaugeElement = document.querySelector(".gauge");
+        const gaugeElement1 = document.querySelector(".gauge1");
+        const gaugeElement2 = document.querySelector(".gauge2");
+
+        function setGaugeValue(gauge, value) {
+        if (value < 0 || value > 1) {
+            return;
+        }
+    
+        gauge.querySelector(".gauge__fill").style.transform = `rotate(${
+            value / 2
+        }turn)`;
+        gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+            value * 100
+        )}°`;
+        }
+
+        function setGaugeValue1(gauge, value) {
+        if (value < 0 || value > 1) {
+            return;
+        }
+    
+        gauge.querySelector(".gauge__fill1").style.transform = `rotate(${
+            value / 2
+        }turn)`;
+        gauge.querySelector(".gauge__cover1").textContent = `${Math.round(
+            value * 100
+        )}ml`;
+        }
+
+        function setGaugeValue2(gauge, value) {
+        if (value < 0 || value > 1) {
+            return;
+        }
+    
+        gauge.querySelector(".gauge__fill2").style.transform = `rotate(${
+            value / 2
+        }turn)`;
+        gauge.querySelector(".gauge__cover2").textContent = `${Math.round(
+            value * 100
+        )}°`;
+        }
+        
+        function changeMeter() {
+            let value = prompt("Please enter a temperature...", "");
+            if (value != null) {
+                setGaugeValue(gaugeElement, value);
+            }
+        }
+
+        function changeMeter1() {
+            let value = prompt("Please enter a temperature...", "");
+            if (value != null) {
+                setGaugeValue1(gaugeElement1, value);
+            }
+        }
+
+        var add1 = .6;
+        function changeMeterPlus() {
+            add1 = add1 + .01;
+            let value = add1;
+            if (value != null) {
+                setGaugeValue2(gaugeElement2, value);
+            }
+        }
+        function changeMeterNeg() {
+            add1-=.01;
+            let value = add1;
+            if (value != null) {
+                setGaugeValue2(gaugeElement2, value);
+            }
+        }
+
+        var Mode = '';
+        function cool() {
+            Mode = 'Cool'
+            document.getElementById("mode").innerHTML = Mode;
+        };
+        function hot() {
+            Mode = 'Hot'
+            document.getElementById("mode").innerHTML = Mode;
+        };
+        function off() {
+            Mode = 'Off'
+            document.getElementById("mode").innerHTML = Mode;
+        };
+
+    </script>
+</body>
+</html>
